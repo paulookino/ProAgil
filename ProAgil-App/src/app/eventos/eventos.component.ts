@@ -10,12 +10,19 @@ import { error } from 'util';
 })
 export class EventosComponent implements OnInit {
 
-  eventos: any;
+  eventos: any = [];
+  imagemLargura = 50;
+  imagemMargem = 2;
+  mostrarImagem = false;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getEventos();
+  }
+
+  alternarImagem(){
+    this.mostrarImagem = !this.mostrarImagem;
   }
 
   getEventos(){

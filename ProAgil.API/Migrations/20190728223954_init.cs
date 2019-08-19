@@ -16,7 +16,8 @@ namespace ProAgil.API.Migrations
                     Local = table.Column<string>(nullable: true),
                     Lote = table.Column<string>(nullable: true),
                     QtdPessoas = table.Column<int>(nullable: false),
-                    DataEvento = table.Column<string>(nullable: true)
+                    DataEvento = table.Column<string>(nullable: true),
+                    ImagemUrl = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

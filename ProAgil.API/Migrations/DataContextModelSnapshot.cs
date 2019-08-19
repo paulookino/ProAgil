@@ -20,6 +20,8 @@ namespace ProAgil.API.Migrations
                     b.Property<int>("EventoId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ImagemUrl");   
+
                     b.Property<string>("DataEvento");
 
                     b.Property<string>("Local");
