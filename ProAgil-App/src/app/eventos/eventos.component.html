@@ -1,8 +1,7 @@
 <div class="form-inline">
     <div class="form-group mb-2" >
-        <input type="text" class="form-control mr-2" placeholder="buscar"
+        <label class="mr-2">Filtro:</label><input type="text" class="form-control mr-2" placeholder="buscar"
         [(ngModel)]="filtroLista">
-        <button class="btn btn-outline-sucess">buscar</button>
     </div>
 </div>
 <h3>Filtro: {{filtroLista}}</h3>
@@ -24,7 +23,7 @@
         </tr>
     </thead>
     <tbody *ngIf="eventos && eventos.length">
-        <tr *ngFor="let evento of eventos">
+        <tr *ngFor="let evento of eventosFiltrados">
             <td>
                <img *ngIf="mostrarImagem"
                src="http://localhost:5000/img/{{evento.imagemUrl}}"
