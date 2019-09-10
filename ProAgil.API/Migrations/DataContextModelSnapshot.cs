@@ -6,7 +6,7 @@ using ProAgil.API.Data;
 
 namespace ProAgil.API.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(ProAgilContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

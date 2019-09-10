@@ -7,7 +7,7 @@ using ProAgil.API.Data;
 
 namespace ProAgil.API.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(ProAgilContext))]
     [Migration("20190728223954_init")]
     partial class init
     {
