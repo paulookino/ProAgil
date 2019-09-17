@@ -42,7 +42,7 @@ namespace ProAgil.Repository
         /// EVENTO
         public async Task<Evento[]> GetAllEventoAsync(bool includePalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos
+            IQueryable<Evento> query = _context.Evento
             .Include(c => c.Lotes)
             .Include(c => c.RedesSociais);
 
@@ -62,7 +62,7 @@ namespace ProAgil.Repository
 
         public async Task<Evento> GetAllEventoAsyncById(int EventoId, bool includePalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos
+            IQueryable<Evento> query = _context.Evento
             .Include(c => c.Lotes)
             .Include(c => c.RedesSociais);
 
@@ -82,7 +82,7 @@ namespace ProAgil.Repository
 
         public async Task<Evento[]> GetAllEventoAsyncByTema(string tema, bool includePalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos
+            IQueryable<Evento> query = _context.Evento
             .Include(c => c.Lotes)
             .Include(c => c.RedesSociais);
 

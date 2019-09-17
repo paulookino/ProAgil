@@ -28,7 +28,7 @@ namespace ProAgil.API.Controllers
 
             try{
 
-                var result = await  _context.Eventos.ToListAsync();
+                var result = await  _context.Evento.ToListAsync();
                    return  Ok(result);
             }
             catch(Exception){
@@ -46,7 +46,7 @@ namespace ProAgil.API.Controllers
 
             try{
 
-                var result = await _context.Eventos.FirstOrDefaultAsync(c => c.Id == id);
+                var result = await _context.Evento.FirstOrDefaultAsync(c => c.Id == id);
 
 
                 return Ok(result);
