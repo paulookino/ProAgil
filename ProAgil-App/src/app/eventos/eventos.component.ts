@@ -19,7 +19,7 @@ export class EventosComponent implements OnInit {
   imagemMargem = 2;
   mostrarImagem = false;
   modalRef: BsModalRef;
-  registerform: FormGroup;
+  registerForm: FormGroup;
   
   _filtroLista= '';
 
@@ -60,7 +60,7 @@ evento => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1
   }
 
 validation(){
-  this.registerform = new FormGroup({
+  this.registerForm = new FormGroup({
 
       tema: new FormControl('', 
       [Validators.required, Validators.minLength(4), Validators.maxLength(50)]),
