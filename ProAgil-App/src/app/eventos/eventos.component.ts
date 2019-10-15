@@ -26,6 +26,7 @@ export class EventosComponent implements OnInit {
   mostrarImagem = false;
   modalRef: BsModalRef;
   registerForm: FormGroup;
+  bodyDeletarEvento = '';
   modoSalvar = 'post';
   
   _filtroLista= '';
@@ -57,6 +58,25 @@ editarEvento(evento: Evento, template: any){
 novoEvento(template: any){
   this.modoSalvar = 'post';
   this.openModal(template);
+}
+
+
+excluirEvento(evento: Evento, template: any){
+  this.openModal(template);
+  this.evento = evento;
+  this.bodyDeletarEvento = `Tem certeza que deseja excluir o evento: ${evento.tema}, Código ${evento.id}`;
+}
+
+confirmDelete(template: any){
+  this.eventoService.deleteEvento(this.evento.id).subscribe(
+      () =>{
+      template.hide();
+      this.getEventos();
+
+      }, error => {
+        console.log(error);
+        }
+  );
 }
 
   openModal(template: any){
