@@ -29,7 +29,6 @@ export class EventosComponent implements OnInit {
 
   constructor(
     private eventoService: EventoService,
-    private modalService: BsModalService,
     private fb: FormBuilder,
     private localeService: BsLocaleService
     ) { 
@@ -45,9 +44,9 @@ export class EventosComponent implements OnInit {
     this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
   }
 
-  openModal(template: TemplateRef<any>){
+  openModal(template: any){
 
-    this.modalRef = this.modalService.show(template);
+    template.show();
   }
 
 
