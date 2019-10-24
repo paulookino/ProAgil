@@ -167,6 +167,7 @@ validation(){
       console.log(_eventos);
     },
     error => {
+      this.toastr.error(`Erro ao carregar eventos: ${error}`);
       console.log(error);
     }
 
