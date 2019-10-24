@@ -10,7 +10,9 @@ const routes: Routes = [
   { path: 'eventos', component: EventosComponent },
   { path: 'palestrantes', component: PalestrantesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'contatos', component: ContatosComponent }
+  { path: 'contatos', component: ContatosComponent },
+  { path: '', redirectTo:"dashboard", pathMatch:"full" },
+  { path: '**', redirectTo:"dashboard", pathMatch:"full" }
 
 ];
 
