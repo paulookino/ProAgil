@@ -5,6 +5,7 @@ import {  BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { defineLocale, BsLocaleService, ptBrLocale } from 'ngx-bootstrap';
 import { TemplateParseError } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
 
 
 defineLocale('pt-br', ptBrLocale);
@@ -34,7 +35,8 @@ export class EventosComponent implements OnInit {
   constructor(
     private eventoService: EventoService,
     private fb: FormBuilder,
-    private localeService: BsLocaleService
+    private localeService: BsLocaleService,
+    private toastr: ToastrService
     ) { 
         this.localeService.use('pt-br');
     }
@@ -72,8 +74,9 @@ confirmDelete(template: any){
       () =>{
       template.hide();
       this.getEventos();
-
+      this.toastr.success("Evento excluído com sucesso!");
       }, error => {
+        this.toastr.error("Ocorreu um erro ao excluir o evento!");
         console.log(error);
         }
   );
@@ -126,7 +129,9 @@ validation(){
                 console.log(novoEvento);
                 template.hide();
                 this.getEventos();
+                this.toastr.success("Evento cadastrado com sucesso!");
               }, error => {
+                this.toastr.error(`Erro ao cadastrar evento: ${error}`);
                 console.log(error);
               }
               
@@ -139,7 +144,9 @@ validation(){
                   (novoEvento: Evento) =>{
                     template.hide();
                     this.getEventos();
+                    this.toastr.success("Evento editado com sucesso!");
                   }, error => {
+                    this.toastr.error(`Erro ao editar evento: ${error}`);
                     console.log(error);
                   }
                   

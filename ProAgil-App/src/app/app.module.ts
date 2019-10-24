@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 
+import { ToastrModule } from 'ngx-toastr';
+
+
 import { EventoService } from './_services/evento.service';
 
 import { AppComponent } from './app.component';
@@ -32,7 +35,10 @@ import { DateTimeFormatPipePipe } from './_helps/DateTimeFormatPipe.pipe';
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      ToastrModule.forRoot({
+         preventDuplicates: true
+      })
    ],
    providers: [
       EventoService
