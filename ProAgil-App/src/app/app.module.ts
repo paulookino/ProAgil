@@ -5,21 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule, TooltipModule, ModalModule, BsDatepickerModule  } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-
-
 import { ToastrModule } from 'ngx-toastr';
-
-
-import { EventoService } from './_services/evento.service';
-
-import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { NavComponent } from './nav/nav.component';
-
 import { DateTimeFormatPipePipe } from './_helps/DateTimeFormatPipe.pipe';
+import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
+import { EventoService } from './_services/evento.service';
+import { EventosComponent } from './eventos/eventos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContatosComponent } from './contatos/contatos.component';
 import { PalestrantesComponent } from './palestrantes/palestrantes.component';
+import { TituloComponent } from './_shared/titulo/titulo.component';
 
 @NgModule({
    declarations: [
@@ -29,7 +24,8 @@ import { PalestrantesComponent } from './palestrantes/palestrantes.component';
       DateTimeFormatPipePipe,
       DashboardComponent,
       ContatosComponent,
-      PalestrantesComponent
+      PalestrantesComponent,
+      TituloComponent
    ],
    imports: [
       BrowserModule,
